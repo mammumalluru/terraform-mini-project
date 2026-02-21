@@ -79,11 +79,11 @@ resource "aws_route_table_association" "test_rt_associate" {
 
 resource "aws_security_group" "test_sg" {
     vpc_id = aws_vpc.test_vpc.id
-    ingress = {
+    ingress {
         from_port = 80
         to_port = 85
         protocol = "tcp"
-        cidr_block = "0.0.0.0/0"
+        cidr_blocks = ["0.0.0.0/0"]
 
     }
 
