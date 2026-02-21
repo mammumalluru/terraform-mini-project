@@ -103,7 +103,7 @@ resource "aws_instance" "test_instance" {
     ami = "ami-0f3caa1cf4417e51b"
     instance_type = "t2.small"
     key_name = "MC"
-    vpc_security_group_ids = aws_security_group.test_sg.id
+    vpc_security_group_ids = [aws_security_group.test_sg.id]
     user_data = file("userdata.sh")
 
     tags = {
